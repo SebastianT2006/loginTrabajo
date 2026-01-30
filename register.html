@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body class="bg-dark-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="./img/empresa.jpg" alt="Card image cap">
+                    <div class="card-body bg-dark">
+                        <h2 class="text-white">Registrarse como Empresa</h2>
+                        <div class="logo">
+                            <i class="bi bi-body-text"></i>
+                        </div>
+                        <form class="login-form">
+                            <p class="card-text text-white">Registra tu empresa para comenzar a contratar a tus candidatos.</p>
+                            <form class="login-form">
+                                <div class="input-group">
+                                    <label for="username" class="text-white">Nombre de la compañia:</label>
+                                    <input type="text" id="emailCompany" name="username"
+                                        placeholder="Ingresa su correo electronico" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="password" class="text-white" >Contraseña:</label>
+                                    <input type="password" id="passwordCompany" name="password"
+                                        placeholder="Ingresa tu contraseña" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="tipeCompany" class="text-white">Tipo de compañia:</label>
+                                    <input type="text" id="tipeCompany" name="password"
+                                        placeholder="Ingresa tu contraseña" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="descripcion" class="text-white">una breve descripcion:</label>
+                                    <input type="text" id="descripcionCompany" name="password"
+                                        placeholder="Ingresa tu contraseña" required>
+                                </div>
+
+                                <button type="button" class="submit-btn" id="inicio">Sign up</button>
+
+                                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                            </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="./img/empleado.jpg" alt="Card image cap">
+                    <div class="card-body bg-dark">
+                        <h2 class="text-white">Registrarse como candidato</h2>
+                        <div class="logo">
+                            <i class="bi bi-body-text"></i>
+                        </div>
+                        <form class="login-form">
+                            <p class="card-text text-white">Registrate para empezar tu vida laboral</p>
+                            <form class="login-form">
+
+
+
+                                <div class="input-group">
+                                    <label for="username" class="text-white">Usuario:</label>
+                                    <input type="text" id="emailCandidato" name="username"
+                                        placeholder="Ingresa su correo electronico" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="password" class="text-white" >Contraseña:</label>
+                                    <input type="password" id="passwordCandidato" name="password"
+                                        placeholder="Ingresa tu contraseña" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="password" class="text-white">Profesion:</label>
+                                    <input type="text" id="profesion" name="profesion"
+                                        placeholder="Ingresa tu Profesion" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="password" class="text-white">años de experiencia:</label>
+                                    <input type="number" id="experiencia" name="experiencia"
+                                        placeholder="Ingresa tus años de experiencia" required>
+                                </div>
+
+                                <button type="button" class="submit-btn" id="createAcount">Sign up</button>
+
+                                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                            </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/createAcount.js"></script>
+</body>
+
+</html>

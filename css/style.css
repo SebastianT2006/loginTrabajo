@@ -1,0 +1,131 @@
+* {
+    /*margin: 0 y padding: 0 eliminan los espacios automáticos que los navegadores agregan*/
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box hace que el padding y el borde se incluyan en el tamaño total del elemento, lo que facilita mucho el diseño.*/
+    box-sizing: border-box;
+}
+
+body {
+    /*font-family: Arial → cambia la fuente del texto.*/
+    font-family: Arial, sans-serif;
+    /*background-size: cover → la imagen cubre toda la pantalla sin deformarse.*/
+
+    /*background-position: center → centra la imagen.*/
+    /*display: flex → activa Flexbox para acomodar elementos.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh → la página mide 100% de la altura de la pantalla.*/
+    height: 100vh;
+    /*Esto centra el login en el medio y coloca la imagen de fondo.*/
+}
+
+.login-container {
+
+    /*background-color: rgba() → fondo blanco con transparencia del 90%.*/
+    background-color: rgba(255, 255, 255, 0.9); /* Leve transparencia */
+    /*padding: 20px → espacio interno para que el contenido no quede pegado al borde.*/
+    padding: 20px;
+    /*border-radius: 10px → bordes redondeados.*/
+    border-radius: 10px;
+    /*width: 100% → ocupa todo el ancho posible.*/
+    width: 100%;
+    /*max-width: 400px → pero no más de 400px (se adapta a celulares y PCs).*/
+    max-width: 400px;
+    /*box-shadow → agrega sombra para que parezca elevado.*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*Mejora el aspecto del título.*/
+h2 {
+    /*Alinea el texto*/
+    text-align: center;
+    /*margin-bottom: 20px → espacio con lo de abajo.*/
+    margin-bottom: 20px;
+    color: #333;
+}
+/*Coloca espacio entre cada campo del formulario.*/
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    /*display: block → hace que el label ocupe toda la línea.*/
+    display: block;
+    /*margin-bottom: 5px → espacio entre la etiqueta y el input.*/
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    /*width: 100% → ocupan todo el ancho disponible.*/
+    width: 100%;
+    /*padding: 10px → espacio interno para que el texto no esté pegado.*/
+    padding: 10px;
+    /*border: 1px solid #ccc → borde gris suave.*/
+    border: 1px solid #ccc;
+    /*border-radius: 4px → bordes un poco redondeados.*/
+    border-radius: 4px;
+    /*outline: none → quita el borde azul feo cuando haces clic.*/
+    outline: none;
+}
+/*Cambia el borde a azul para indicar que el input está activo.*/
+.input-group input:focus {
+    border-color: #004792;
+}
+
+.submit-btn {
+    /*width: 100% → ocupa todo el ancho.*/
+    width: 100%;
+    /*padding: 10px → más alto, más cómodo.*/
+    padding: 10px;
+    background-color: #4226be;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    /*cursor: pointer → el cursor cambia a mano.*/
+    cursor: pointer;
+}
+/*Se oscurece un poco al pasar el mouse.*/
+.submit-btn:hover {
+    background-color: #eef6ff;
+}
+
+.forgot-password {
+    /*display: block → ocupa una línea completa.*/
+    display: block;
+    /*text-align: center → centrado.*/
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #007BFF;
+    /*text-decoration: none → sin subrayado*/
+    text-decoration: none;
+}
+/*Se subraya al pasar el mouse para indicar que es un enlace.*/
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.crear-usuario {
+    display: block;
+    /*text-align: center → centrado.*/
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #007BFF;
+    /*text-decoration: none → sin subrayado*/
+    text-decoration: none;
+    ;
+}
+
+.crear-usuario:hover{
+    text-decoration: underline;
+}
+
+.logo{
+  color: #4226be;
+  text-align: center;
+  font-size: 40px;
+}
