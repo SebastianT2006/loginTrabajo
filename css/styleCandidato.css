@@ -1,0 +1,36 @@
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .section-card {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .toggle-label {
+      font-size: 0.9rem;
+      color: #4caf50;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .small-muted {
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
+    input, textarea {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    .btn-save {
+      min-width: 120px;
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }

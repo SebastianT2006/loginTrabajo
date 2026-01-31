@@ -1,3 +1,42 @@
 {
-  "Users": []
+  "Users": [
+    {
+      "id": "120c",
+      "correo": "asa",
+      "password": "asa",
+      "profesion": "asa",
+      "experiencia": "12",
+      "rol": "candidato",
+      "firstName": "sebas",
+      "lastName": "Lopez",
+      "availableForWork": true,
+      "descripcion": "holaaaaaa",
+      "telefono": "3212323433",
+      "linkedin": "df",
+      "portfolio": "sdsd"
+    },
+    {
+      "id": "f1bb",
+      "correo": "asa",
+      "password": "123",
+      "tipo": "asa",
+      "descripcion": "asa",
+      "rol": "company"
+    },
+    {
+      "id": "b30e",
+      "correo": "pedrito@gmail.com",
+      "password": "1234",
+      "profesion": "ingenerio de sistemas",
+      "experiencia": "12",
+      "rol": "candidato",
+      "firstName": "pedrita12",
+      "lastName": "Gomez12",
+      "availableForWork": true,
+      "descripcion": "",
+      "telefono": "3212323433",
+      "linkedin": "",
+      "portfolio": ""
+    }
+  ]
 }

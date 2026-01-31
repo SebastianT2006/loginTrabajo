@@ -13,20 +13,23 @@ inicio.addEventListener("click", async function () {
       user => user.correo === email && user.password === password
     );
 
-    if (userFound) {
-      console.log("bien");
-      if(userFound.rol == "candidato"){
-        window.location= "./workers.html";
-      }else if(userFound.rol=="company"){
-        window.location="./admin.html";
-      }else{
-        alert("No fue encontrado")
-      }
-    } else {
-      console.log("mal");
+    if (!userFound) {
+      Swal.fire("Error", "Correo o contraseña incorrectos", "error");
+      return;
+    }
+
+    // 👉 guardar sesión (simple)
+    localStorage.setItem("usuarioActivo", JSON.stringify(userFound));
+
+    // 👉 redirección por rol
+    if (userFound.rol === "candidato") {
+      window.location.href = "./candidato.html";
+    } else if (userFound.rol === "company") {
+      window.location.href = "./admin.html";
     }
 
   } catch (error) {
     console.error("Error:", error);
+    Swal.fire("Error", "Algo salió mal", "error");
   }
 });
