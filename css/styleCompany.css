@@ -1,0 +1,43 @@
+
+:root {
+
+  --bg-main: #0b111b;          
+  --color-primary: #1d8cf8;    
+  --color-primary-hover: #0d5a9e; 
+  --color-secondary: #2c3543;  
+  --color-accent: #00d284;     
+
+  --color-lgray: #a0aec0; 
+  --color-gray: #718096;      
+
+  --bs-primary: #137fec;
+  --bs-body-bg: #0a0e12;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bs-body-bg);
+}
+.navbar-custom {
+  background-color: #0f172a;
+  border-bottom: 1px solid #1f2937;
+}
+.card-custom {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}

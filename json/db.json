@@ -1,42 +1,54 @@
 {
   "Users": [
     {
-      "id": "120c",
-      "correo": "asa",
-      "password": "asa",
-      "profesion": "asa",
+      "id": "a49b",
+      "correo": "pedrito",
+      "password": "123",
+      "profesion": "sistemas",
       "experiencia": "12",
       "rol": "candidato",
-      "firstName": "sebas",
-      "lastName": "Lopez",
-      "availableForWork": true,
-      "descripcion": "holaaaaaa",
-      "telefono": "3212323433",
-      "linkedin": "df",
-      "portfolio": "sdsd"
+      "firstName": "imsael",
+      "lastName": "Gomez",
+      "descripcion": "hola",
+      "telefono": "",
+      "linkedin": "",
+      "portfolio": "",
+      "estado": "activo",
+      "estadoProceso": "contactado"
     },
     {
-      "id": "f1bb",
-      "correo": "asa",
+      "id": "f2bb",
+      "correo": "e",
       "password": "123",
-      "tipo": "asa",
-      "descripcion": "asa",
+      "nombreEmpresa": "Tech Corp",
+      "tipo": "Software",
+      "descripcion": "Empresa de tecnología",
       "rol": "company"
     },
     {
-      "id": "b30e",
-      "correo": "pedrito@gmail.com",
+      "id": "ee3b3579-27d4-4a6b-8467-eec4b010ae4a",
+      "correo": "sebas",
       "password": "1234",
-      "profesion": "ingenerio de sistemas",
+      "firstName": "Sebastian",
+      "lastName": "Lopez",
+      "profesion": "sistemas",
       "experiencia": "12",
       "rol": "candidato",
-      "firstName": "pedrita12",
-      "lastName": "Gomez12",
-      "availableForWork": true,
-      "descripcion": "",
-      "telefono": "3212323433",
+      "estado": "activo",
+      "estadoProceso": "pendiente",
+      "descripcion": "holi",
+      "telefono": "",
       "linkedin": "",
       "portfolio": ""
+    },
+    {
+      "id": "3cc0aeae-382f-45b8-83de-41e44245870f",
+      "correo": "a",
+      "password": "a",
+      "nombreEmpresa": "Empresa",
+      "tipo": "a",
+      "descripcion": "a",
+      "rol": "company"
     }
   ]
 }

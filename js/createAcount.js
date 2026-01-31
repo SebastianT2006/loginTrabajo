@@ -1,114 +1,134 @@
 const API_USERS = "http://localhost:3000/Users";
-const company = document.getElementById("inicio")
-const candidato = document.getElementById("createAcount")
 
-candidato.addEventListener("click", async function(){
-const emailCandidato=document.getElementById("emailCandidato")
-const passwordCandidato=document.getElementById("passwordCandidato")
-const experiencia=document.getElementById("experiencia")
-const profesion = document.getElementById("profesion")
-if(emailCandidato.value=="" || passwordCandidato.value=="" ||experiencia.value==""||profesion.value==""){
- Swal.fire({
-  title: "Error!",
-  text: "Todos los campos son requeridos!",
-  icon: "error"
-});
-    emailCandidato.classList.add("is-invalid");
-    passwordCandidato.classList.add("is-invalid");
-    experiencia.classList.add("is-invalid");
-    profesion.classList.add("is-invalid");
-    emailCandidato.classList.remove("is-valid");
-    passwordCandidato.classList.remove("is-valid");
-    experiencia.classList.remove("is-valid");
-    profesion.classList.remove("is-valid");
+const btnCandidato = document.getElementById("createAcount");
+const btnCompany = document.getElementById("inicio");
 
-}else{
- Swal.fire({
-  title: "Good job!",
-  text: "usuario agregado!",
-  icon: "success"
-});
-    emailCandidato.classList.add("is-valid");
-    passwordCandidato.classList.add("is-valid");
-    experiencia.classList.add("is-valid");
-    profesion.classList.add("is-valid");
-    emailCandidato.classList.remove("is-invalid");
-    passwordCandidato.classList.remove("is-invalid");
-    experiencia.classList.remove("is-invalid");
-    profesion.classList.remove("is-invalid");
+// ======================
+// REGISTRO CANDIDATO
+// ======================
+btnCandidato.addEventListener("click", async () => {
+  const email = document.getElementById("emailCandidato").value.trim();
+  const password = document.getElementById("passwordCandidato").value.trim();
+  const experiencia = document.getElementById("experiencia").value.trim();
+  const profesion = document.getElementById("profesion").value.trim();
+  const firstName = document.getElementById("firstName")?.value.trim() || "-";
+  const lastName = document.getElementById("lastName")?.value.trim() || "-";
+
+  if (!email || !password || !experiencia || !profesion) {
+    Swal.fire("Error", "Todos los campos son requeridos", "error");
+    marcarCamposInvalidos([email, password, experiencia, profesion]);
+    return;
+  }
+
+  try {
+    const res = await fetch(API_USERS);
+    const users = await res.json();
+
+    if (users.find(u => u.correo === email)) {
+      Swal.fire("Error", "Este correo ya está registrado", "error");
+      return;
+    }
 
     const nuevoUsuario = {
-    correo: emailCandidato.value.trim(),
-    password: passwordCandidato.value.trim(),
-    profesion:profesion.value.trim(),
-    experiencia:experiencia.value.trim(),
-    rol:"candidato"
+      id: crypto.randomUUID(),
+      correo: email,
+      password,
+      firstName,
+      lastName,
+      profesion,
+      experiencia,
+      rol: "candidato",
+      estado: "activo",
+      estadoProceso: "pendiente"
+    };
 
-  };
-  await fetch(API_USERS, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(nuevoUsuario)
-  });
-emailCandidato.value = "";
-passwordCandidato.value = "";
-experiencia.value = "";
-profesion.value = "";
-
-}
-});
-
-
-company.addEventListener("click", async function(){
-const emailCompany=document.getElementById("emailCompany")
-const passwordCompany=document.getElementById("passwordCompany")
-const tipeCompany=document.getElementById("tipeCompany")
-const descripcionCompany=document.getElementById("descripcionCompany")
-if(emailCompany.value=="" || passwordCompany.value=="" ||tipeCompany.value==""||descripcionCompany.value==""){
- Swal.fire({
-  title: "Error!",
-  text: "Todos los campos son requeridos!",
-  icon: "error"
-});
-    emailCompany.classList.add("is-invalid");
-    passwordCompany.classList.add("is-invalid");
-    tipeCompany.classList.add("is-invalid");
-    descripcionCompany.classList.add("is-invalid");
-    emailCompany.classList.remove("is-valid");
-    passwordCompany.classList.remove("is-valid");
-    tipeCompany.classList.remove("is-valid");
-    descripcionCompany.classList.remove("is-valid");
-
-}else{
-  Swal.fire({
-  title: "Good job!",
-  text: "usuario agregado!",
-  icon: "success"
-});
-  emailCompany.classList.add("is-valid");
-    passwordCompany.classList.add("is-valid");
-    tipeCompany.classList.add("is-valid");
-    descripcionCompany.classList.add("is-valid");
-    emailCompany.classList.remove("is-invalid");
-    passwordCompany.classList.remove("is-invalid");
-    tipeCompany.classList.remove("is-invalid");
-    descripcionCompany.classList.remove("is-invalid");
-
-
-      const nuevoCompany = {
-    correo: emailCompany.value.trim(),
-    password: passwordCompany.value.trim(),
-    tipo:tipeCompany.value.trim(),
-    descripcion:descripcionCompany.value.trim(),
-    rol:"company"
-  };
-  await fetch(API_USERS, {
+    await fetch(API_USERS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(nuevoCompany)
+      body: JSON.stringify(nuevoUsuario)
     });
+
+    Swal.fire("Registrado", "Candidato creado correctamente", "success");
+    limpiarCampos(["emailCandidato", "passwordCandidato", "experiencia", "profesion", "firstName", "lastName"]);
+
+  } catch (error) {
+    console.error("Error:", error);
+    Swal.fire("Error", "No se pudo registrar al candidato", "error");
+  }
+});
+
+// ======================
+// REGISTRO EMPRESA
+// ======================
+btnCompany.addEventListener("click", async () => {
+  const email = document.getElementById("emailCompany").value.trim();
+  const password = document.getElementById("passwordCompany").value.trim();
+  const tipo = document.getElementById("tipeCompany").value.trim();
+  const descripcion = document.getElementById("descripcionCompany").value.trim();
+  const nombreEmpresa = document.getElementById("nombreEmpresa")?.value.trim() || "Empresa";
+
+  if (!email || !password || !tipo || !descripcion) {
+    Swal.fire("Error", "Todos los campos son requeridos", "error");
+    marcarCamposInvalidos([email, password, tipo, descripcion]);
+    return;
+  }
+
+  try {
+    const res = await fetch(API_USERS);
+    const users = await res.json();
+
+    if (users.find(u => u.correo === email)) {
+      Swal.fire("Error", "Este correo ya está registrado", "error");
+      return;
+    }
+
+    const nuevaEmpresa = {
+      id: crypto.randomUUID(),
+      correo: email,
+      password,
+      nombreEmpresa,
+      tipo,
+      descripcion,
+      rol: "company"
+    };
+
+    await fetch(API_USERS, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(nuevaEmpresa)
+    });
+
+    Swal.fire("Registrado", "Empresa creada correctamente", "success");
+    limpiarCampos(["emailCompany", "passwordCompany", "tipeCompany", "descripcionCompany", "nombreEmpresa"]);
+
+  } catch (error) {
+    console.error("Error:", error);
+    Swal.fire("Error", "No se pudo registrar la empresa", "error");
+  }
+});
+
+// ======================
+// FUNCIONES AUXILIARES
+// ======================
+function marcarCamposInvalidos(campos) {
+  campos.forEach(c => {
+    const input = typeof c === "string" ? document.getElementById(c) : c;
+    if (input) {
+      input.classList.add("is-invalid");
+      input.classList.remove("is-valid");
+    }
+  });
 }
 
+function limpiarCampos(campos) {
+  campos.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) input.value = "";
+    if (input) {
+      input.classList.remove("is-invalid");
+      input.classList.add("is-valid");
+    }
+  });
+}
 
-});
 
